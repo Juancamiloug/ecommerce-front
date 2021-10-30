@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container">
+  <h3>LISTA DE PRODUCTOS</h3>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="nuevoProducto()">
+    Nuevo Producto
+  </button>
+  <br /><br />
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id_producto</th>
+        <th scope="col">dni</th>
+        <th scope="col">nombre</th>
+        <th scope="col">cantidad</th>
+        <th scope="col">precio</th>
+        <th scope="col">creadoEn</th>
+        <th scope="col">ActualizadoEn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let producto of productos"
+        (click)="editarProducto(producto.id_producto)"
+      >
+        <th scope="row">{{ producto.id_producto }}</th>
+        <td>{{ producto.dni }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.cantidad }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.creadoEn | date: "medium" }}</td>
+        <td>{{ producto.ActualizadoEn | date: "medium" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-dark" (click)="login()">
+    Regresar a inicio
+  </button>
+</div>
+<app-footer></app-footer>

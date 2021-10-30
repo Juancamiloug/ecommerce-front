@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="container">
+  <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+    <div class="form-group">
+      <h3>
+        <label form="exampleFormControlInput1">FORMULARIO DE CREACIÓN</label>
+      </h3>
+      <h4>
+        <label form="exampleFormControlInput1">NUEVO CLIENTE</label>
+      </h4>
+      <br />
+      <label form="exampleFormControlInput1">Nombre</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Nombre del cliente"
+        formControlName="nombre"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Apellido</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Apellido del cliente"
+        formControlName="apellido"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Cédula</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Cedula del cliente"
+        formControlName="cedula"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Correo</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Correo del cliente"
+        formControlName="correo"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Telefono</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Telefono del cliente"
+        formControlName="telefono"
+      />
+    </div>
+    <br /><br />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-dark" (click)="salir()">
+      Regresar
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

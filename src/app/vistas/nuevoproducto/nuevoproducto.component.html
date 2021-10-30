@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="container">
+  <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+    <div class="form-group">
+      <h3>
+        <label form="exampleFormControlInput1">FORMULARIO DE CREACIÓN</label>
+      </h3>
+      <h4>
+        <label form="exampleFormControlInput1">NUEVO PRODUCTO</label>
+      </h4>
+      <br />
+      <label form="exampleFormControlInput1">DNI</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="DNI de producto"
+        formControlName="dni"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Cantidad</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Cantidad producto"
+        formControlName="cantidad"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Precio</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Precio de producto"
+        formControlName="precio"
+      /><br /><br />
+      <label form="exampleFormControlInput1">Nombre</label><br />
+      <input
+        type="text"
+        class="formControl"
+        placeholder="Nombre del producto"
+        formControlName="nombre"
+      /><br /><br />
+    </div>
+    <br /><br />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-dark" (click)="salir()">
+      Regresar
+    </button>
+  </form>
+</div>
+<app-footer></app-footer>

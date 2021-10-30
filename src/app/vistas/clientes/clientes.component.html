@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="container">
+  <h3>LISTA DE CLIENTES</h3>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="nuevoPaciente()">
+    Nuevo Cliente
+  </button>
+  <br /><br />
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id_cliente</th>
+        <th scope="col">cedula</th>
+        <th scope="col">nombre</th>
+        <th scope="col">apellido</th>
+        <th scope="col">correo</th>
+        <th scope="col">telefono</th>
+        <th scope="col">creadoEn</th>
+        <th scope="col">ActualizadoEn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let cliente of clientes"
+        (click)="editarCliente(cliente.id_cliente)"
+      >
+        <th scope="row">{{ cliente.id_cliente }}</th>
+        <td>{{ cliente.cedula }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.apellido }}</td>
+        <td>{{ cliente.correo }}</td>
+        <td>{{ cliente.telefono }}</td>
+        <td>{{ cliente.creadoEn | date: "medium" }}</td>
+        <td>{{ cliente.ActualizadoEn | date: "medium" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-dark" (click)="login()">
+    Regresar a inicio
+  </button>
+</div>
+<app-footer></app-footer>
